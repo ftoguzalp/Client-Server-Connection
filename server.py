@@ -1,4 +1,6 @@
 import socket
+import subprocess
+
 
 host="127.0.0.1"
 
@@ -17,6 +19,5 @@ print("The adress that server is connected to is:" +str(address))
 while True:
     data=connection.recv(1024).decode()
     print(data)
-    response_data="Message Received    "
-    connection.send(response_data.encode())
+    result=subprocess.run(data,stdout=subprocess.PIPE,)
 connection.close()
